@@ -15,9 +15,9 @@ def generate_round():
 
     progression = [start + i * step for i in range(PROGRESSION_LENGTH)]
 
-    hidden_index = random.randint(
+    hidden_index = random.randint(  # NOSONAR python:S2245
         MIN_START, PROGRESSION_LENGTH - 2
-        )  # NOSONAR python:S2245
+        ) 
     correct_answer = progression[hidden_index]
 
     progression_display = [
