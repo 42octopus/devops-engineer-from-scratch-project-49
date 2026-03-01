@@ -2,6 +2,9 @@ import random
 
 DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
+MIN_NUMBER = 2
+MAX_NUMBER = 100
+
 
 def is_prime(n: int) -> bool:
     if n <= 1:
@@ -19,7 +22,7 @@ def is_prime(n: int) -> bool:
 
 
 def generate_round():
-    number = random.randint(2, 100)  # NOSONAR python:S2245
+    number = random.randint(MIN_NUMBER, MAX_NUMBER)  # NOSONAR python:S2245
     question = str(number)
     correct_answer = 'yes' if is_prime(number) else 'no'
     return question, correct_answer
