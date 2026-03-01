@@ -4,9 +4,9 @@ DESCRIPTION = 'What is the result of the expression?'
 
 
 def generate_round():
-    num1 = random.randint(1, 25)
-    num2 = random.randint(1, 25)
-    op = random.choice(['+', '-', '*'])
+    num1 = random.randint(1, 25)  # NOSONAR python:S2245
+    num2 = random.randint(1, 25)  # NOSONAR python:S2245
+    op = random.choice(['+', '-', '*'])  # NOSONAR python:S2245
 
     question = f'{num1} {op} {num2}'
 
