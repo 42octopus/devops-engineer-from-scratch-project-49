@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import prompt
 
 from brain_games.cli import welcome_user
@@ -5,12 +6,12 @@ from brain_games.cli import welcome_user
 ROUNDS_COUNT = 3
 
 
-def run_game(generate_round, description: str):
+def run_game(game):
     name = welcome_user()
-    print(description)
+    print(game.DESCRIPTION)
 
     for _ in range(ROUNDS_COUNT):
-        question, correct_answer = generate_round()
+        question, correct_answer = game.generate_round()
         print(f'Question: {question}')
 
         answer = prompt.string('Your answer: ').strip()
@@ -18,10 +19,7 @@ def run_game(generate_round, description: str):
         if answer.lower() == str(correct_answer).lower():
             print('Correct!')
         else:
-            print(
-                f"'{answer}' is wrong answer ;(. "
-                f"Correct answer was '{correct_answer}'."
-            )
+            print(f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {name}!")
             return
 

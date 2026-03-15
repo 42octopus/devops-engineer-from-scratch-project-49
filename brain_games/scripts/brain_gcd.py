@@ -1,9 +1,10 @@
+#!/usr/bin/env python3
 from brain_games.engine import run_game
-from brain_games.games.gcd import DESCRIPTION, generate_round
+import brain_games.games.gcd as game
 
 
 def main():
-    run_game(generate_round, DESCRIPTION)
+    run_game(game)
 
 
 if __name__ == '__main__':
