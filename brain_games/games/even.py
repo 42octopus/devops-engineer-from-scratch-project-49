@@ -6,8 +6,12 @@ MIN_NUMBER = 1
 MAX_NUMBER = 100
 
 
+def is_even(number: int) -> bool:
+    return number % 2 == 0
+
+
 def generate_round():
     number = random.randint(MIN_NUMBER, MAX_NUMBER)  # NOSONAR python:S2245
     question = str(number)
-    correct_answer = 'yes' if number % 2 == 0 else 'no'
+    correct_answer = 'yes' if is_even(number) else 'no'
     return question, correct_answer
